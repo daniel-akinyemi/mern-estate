@@ -1,3 +1,4 @@
 export const test = (req,res)=>{
-    res.send("hello world!")
+    console.log(req.body)
 }
+
