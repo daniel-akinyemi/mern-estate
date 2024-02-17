@@ -5,8 +5,13 @@ export const signup = async (req,res) =>{
     const {username,email,password} = req.body;
     const hashPassword = bcryptjs.hashSync(password, 10)
     const newUser = new User({username,email,password: hashPassword})
-    await newUser.save()
-    res.status(201).json("User created Successfully")
-    res.send("Sign up route")
-
+    try{
+        await newUser.save()
+        res.status(201).json("User created Successfully")
+    }catch(err){
+        res.status(500).json(err.message)
+        
+    }
+    
+   
 }
