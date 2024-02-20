@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import {Link} from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { signInStart, signInSuccess, signInFailure } from '../redux/user/userSlice'}
+import { signInStart, signInSuccess, signInFailure } from '../redux/user/userSlice'
 
 const SignIn = () => {
   const [formData,setFormData] = useState({})
@@ -19,7 +19,7 @@ const SignIn = () => {
     e.preventDefault()
     try {
       dispatch(signInStart())
-    const res = await fetch('/api/auth/signin', 
+    const res = await fetch('/api/auth/sign-in', 
     {
       method: 'POST',
       headers: {
