@@ -26,7 +26,7 @@ export const OAuth = () => {
        
     } 
     catch(error){
-      console.log("could not sign in ")
+      console.log("could not sign in ", error)
     }
   }
 
